@@ -1,0 +1,28 @@
+{
+    "name": "scribe-config-lint",
+    "description": "Lint for Scribe configuration file",
+    "version": "0.0.1",
+    "author": {
+        "name": "Prajwal Tuladhar",
+        "email": "praj@infynyxx.com",
+        "url": "http://infynyxx.com"
+    },
+    "main": "./index.js",
+    "bin": {
+        "scribe-config-validator": "./bin/scribe-config-validator"
+    }
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/infynyxx/scribe-config-lint"
+    },
+    "dependencies": {
+        "colors": ">=0.6.0-1"
+    },
+    "devDependencies": {
+        "nodeunit": ">=0.6.4",
+        "coffee-script": ">=1.1.2"
+    },
+    "engines": {
+        "node": ">=0.4"
+    }
+}
