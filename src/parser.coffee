@@ -105,11 +105,6 @@ class StoreParser
 
         return
 
-    getDuplicates: ->
-        uniques = _.uniq @keys
-        return _.intersection @keys, uniques
-
-
     findByName: (name) ->
         return @children[name]
 
