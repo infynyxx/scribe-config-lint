@@ -1,32 +1,3 @@
-###
-class Reporter
-
-    constructor: (@lines, @data) ->
-        @errorCount = 0
-        @errors =
-            'generic': [],
-            'store': []
-        @process()
-
-    process: ->
-        if @data['generic'] and @data['generic'] instanceof Array and @data['generic'].length > 0
-            for value, index in @data['generic']
-                msg = "Line #{value}: #{@lines[value-1]}"
-                @errors['generic'].push msg
-                @errorCount += 1
-
-
-        if @data['store']
-            for store, value of @data['store']
-                if value instanceof Array and value.length > 0
-                    for line in value
-                        msg = "#{line}: #{@lines[line-1]}"
-                        @errors['store'].push msg
-                        @errorCount += 1
-                        
-        return
-###
-
 class Reporter
     constructor: (@storesConf) ->
         @errors = {}
