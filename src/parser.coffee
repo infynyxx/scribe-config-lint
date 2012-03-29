@@ -35,7 +35,7 @@ is_valid_key_value = (line) ->
     line = discard_comment_in_line line
     # file_path=/tmp/scribetest/bucket0
     # category=tps_report*
-    pattern = /^([a-z0-9_]+)\=([a-z0-9_\/]+)([\*]?)$/i
+    pattern = /^([a-z0-9_]+)\=([a-z0-9-_\/]+)([\*]?)$/i
     arr = pattern.exec line
     if arr is null then false else true
 
