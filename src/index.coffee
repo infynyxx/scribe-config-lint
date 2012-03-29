@@ -14,11 +14,22 @@ exports.main = ->
         .parse(process.argv)
 
 
-    options = parseConfigFile commander.config if commander.config
-
     if not commander.file
         log "--file is required".red
-        process.exit 0
+        process.exit 1
 
-    parse commander.file
+    report = parse commander.file
+
+    exitCode = 1
+
+    if report.noError is true
+        log "No errors found in #{commander.file}".yellow
+        exitCode = 0
+    else
+        for store, errors of report.errors
+            log "Section #{store}".red
+            (log "* #{error.green.underline}") for error in errors
+
+    process.exit exitCode
+
 
