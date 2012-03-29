@@ -20,6 +20,8 @@ exports.main = ->
 
     report = parse commander.file
 
+    process.exit 1 if report is false
+
     exitCode = 1
 
     if report.noError is true

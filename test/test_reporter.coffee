@@ -1,4 +1,4 @@
-{createReport} =      require '../lib/reporter'
+{createReport} = require '../lib/reporter'
 {testCase} = require 'nodeunit'
 
 exports.testReporterWithErrors = (test) ->
